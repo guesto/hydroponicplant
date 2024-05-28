@@ -1,6 +1,8 @@
+from gpiozero import OutputDevice, DigitalInputDevice
+from hardware import actionOutputDevice
+
 # Настройка логирования
 import logging
-from time import sleep
 
 logging.basicConfig(
     level=logging.INFO,
@@ -13,8 +15,9 @@ import atexit
 
 @atexit.register
 def exit_handler():
-    logging.info("Stop")
+    logging.info("[Stop]")
 
 # Запуск
-logging.info("Start")
+logging.info("[Start]")
+
 
